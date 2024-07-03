@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            background-color: steelblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensure the body takes up the full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+        .container {
+            width: 220px; /* Adjusted to fit buttons */
+            height: 350px; /* Adjusted to fit content */
+            background-color: grey;
+            border: solid;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .display {
+            background-color: whitesmoke;
+            width: 170px;
+            height: 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center; /* Center vertically */
+            margin: 15px;
+            border-radius: 5px;
+            font-size: 30px; /* Adjusted font size */
+            padding-right: 10px; /* Added padding for spacing */
+            box-sizing: border-box; /* Ensures padding is included in width */
+        }
+        .buttons {
+            display: grid;
+            grid-template-rows: repeat(4, 50px); /* Adjusted to fit height */
+            grid-template-columns: repeat(4, 50px); /* Adjusted to fit width */
+            gap: 10px;
+        }
+        input {
+            width: 50px; /* Adjusted to fit grid */
+            height: 50px; /* Adjusted to fit grid */
+            border-radius: 5px;
+            font-size: 18px; /* Adjusted font size */
+            cursor: pointer;
+        }
+        .equal {
+            background-color: goldenrod;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <input type="button" value="7" onclick="appendNumber(7)"> 
+            <input type="button" value="8" onclick="appendNumber(8)"> 
+            <input type="button" value="9" onclick="appendNumber(9)"> 
+            <input type="button" value="÷" onclick="setOperation('÷')"> 
+            <input type="button" value="4" onclick="appendNumber(4)"> 
+            <input type="button" value="5" onclick="appendNumber(5)"> 
+            <input type="button" value="6" onclick="appendNumber(6)"> 
+            <input type="button" value="x" onclick="setOperation('x')"> 
+            <input type="button" value="1" onclick="appendNumber(1)"> 
+            <input type="button" value="2" onclick="appendNumber(2)"> 
+            <input type="button" value="3" onclick="appendNumber(3)"> 
+            <input type="button" value="-" onclick="setOperation('-')"> 
+            <input type="button" value="0" onclick="appendNumber(0)"> 
+            <input type="button" value="C" onclick="clearDisplay()"> 
+            <input type="button" value="+" onclick="setOperation('+')"> 
+            <input class="equal" type="button" value="=" onclick="calculate()"> 
+        </div>
+    </div>
+</body>
+</html>
